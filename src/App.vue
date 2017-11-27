@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <Player :isPlaying='isPlaying'/>
+    <button class="playBtn" @click="isPlaying?pause():play()">播放</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Player from './components/player'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Player
+  },
+  data(){
+    return{
+      isPlaying: false
+    }
+  },
+  methods:{
+    play:function(){
+      this.isPlaying = true;
+    },
+    pause:function(){
+      this.isPlaying = false;
+    }
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #eee;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+}
+.playBtn{
+  margin-top: 10px;
+  background-color: #a78760;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 50px;
+  height: 25px;
 }
 </style>
