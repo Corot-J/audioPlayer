@@ -3,6 +3,7 @@
     <div class="rotate">
       <img class="cd" :class="isPlaying?'playing':'paused'" src="../assets/cd.png" alt="cd">
       <img class="head" :class="isPlaying?'playing':'paused'" src="../assets/tough.jpg" alt="head">
+      <div class="control-btn"><i class="iconfont icon-play"></i></div>
     </div>
     <img :class="isPlaying?'arm-play':'arm'" src="../assets/cd-arm.png" alt="cd-arm">
   </div>
@@ -14,7 +15,7 @@ export default {
   props: ['isPlaying'],
   data () {
     return {
-      
+
     }
   }
 }
@@ -24,15 +25,16 @@ export default {
 <style scoped>
 .play{
   width: 100%;
-  height: 100px;
   position: relative;
   padding-top: 10px;
 }
 .rotate{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   position: relative;
+  border: 4px solid #eee;
+  border-radius:50%;
 }
 .cd{
   width: 100%;
@@ -40,34 +42,39 @@ export default {
   animation: rotate 8s linear infinite;
 }
 .head{
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  left: calc(50% - 30px);
-  top: calc(50% - 30px);
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
   border-radius: 50%;
   animation: rotate 8s linear infinite;
 }
+.control-btn{
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  position: absolute;
+  left: calc(50% - 50px);
+  top: calc(50% - 50px);
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.3);
+}
+.control-btn i{
+  vertical-align: middle;
+  font-size: 20px;
+  color: #fff;
+}
 .playing{
-  animation-play-state: playing;
-  -webkit-animation-play-state: playing;
+  animation-play-state: running;
 }
 @keyframes rotate{
   0%{
     transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
   }
   100%{
     transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes rotate{
-  0%{
-    -webkit-transform: rotate(0deg);
-  }
-  100%{
-    -webkit-transform: rotate(360deg);
   }
 }
 .paused{
@@ -75,12 +82,12 @@ export default {
   -webkit-animation-play-state: paused;
 }
 .arm,.arm-play{
-  width: 30px;
+  width: 40px;
   position: absolute;
   top: 0;
-  left: calc(50% + 45px);
+  left: calc(50% + 65px);
   transition: transform 0.3s;
-  transform-origin: 11.3px 11.2px;
+  transform-origin: 11.18px 14.62px;
 }
 .arm-play{
   transform: rotate(30deg)

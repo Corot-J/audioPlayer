@@ -31,7 +31,6 @@ export default {
 
 <style>
 #app {
-  background-color: #eee;
   text-align: center;
   margin-top: 60px;
 }
