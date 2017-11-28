@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Player :isPlaying='isPlaying'/>
+    <Player :isPlaying='isPlaying'></Player>
     <button class="playBtn" @click="isPlaying?pause():play()">播放</button>
   </div>
 </template>
