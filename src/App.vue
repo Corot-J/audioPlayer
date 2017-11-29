@@ -1,17 +1,18 @@
 <template>
   <div id="app">
     <Player :isPlaying='isPlaying'></Player>
-    <button class="playBtn" @click="isPlaying?pause():play()">播放</button>
+    <ControlBar></ControlBar>
   </div>
 </template>
 
 <script>
 import Player from './components/player'
+import ControlBar from './components/controlBar'
 
 export default {
   name: 'app',
   components: {
-    Player
+    Player,ControlBar
   },
   data(){
     return{
@@ -30,17 +31,20 @@ export default {
 </script>
 
 <style>
+html,body{
+  width: 100%;
+  height: 100%;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
 #app {
   text-align: center;
-  margin-top: 60px;
-}
-.playBtn{
-  margin-top: 10px;
-  background-color: #a78760;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  width: 50px;
-  height: 25px;
+  width: 100%;
+  height: calc(100% - 60px);
+  padding-top: 60px;
+  position: relative;
+  overflow: hidden;
 }
 </style>

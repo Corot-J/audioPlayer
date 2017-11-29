@@ -12,12 +12,7 @@
 <script>
 export default {
   name: 'Play',
-  props: ['isPlaying'],
-  data () {
-    return {
-
-    }
-  }
+  props: ['isPlaying']
 }
 </script>
 
@@ -26,7 +21,6 @@ export default {
 .play{
   width: 100%;
   position: relative;
-  padding-top: 10px;
 }
 .rotate{
   width: 150px;
