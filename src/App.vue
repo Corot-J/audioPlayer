@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <Player :isPlaying='isPlaying'></Player>
+    <Player></Player>
+    <PlayList></PlayList>
     <ControlBar></ControlBar>
   </div>
 </template>
@@ -8,11 +9,12 @@
 <script>
 import Player from './components/player'
 import ControlBar from './components/controlBar'
+import PlayList from './components/playList'
 
 export default {
   name: 'app',
   components: {
-    Player,ControlBar
+    Player,ControlBar,PlayList
   },
   data(){
     return{

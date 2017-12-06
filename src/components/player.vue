@@ -3,7 +3,7 @@
     <div class="rotate">
       <img class="cd" :class="isPlaying?'playing':'paused'" src="../assets/cd.png" alt="cd">
       <img class="head" :class="isPlaying?'playing':'paused'" src="../assets/tough.jpg" alt="head">
-      <div class="control-btn"><i class="iconfont icon-play"></i></div>
+      <div class="control-btn"><i class="iconfont" :class="isPlaying?'icon-pause':'icon-play'" @click='playControl()'></i></div>
     </div>
     <img :class="isPlaying?'arm-play':'arm'" src="../assets/cd-arm.png" alt="cd-arm">
   </div>
@@ -11,8 +11,16 @@
 
 <script>
 export default {
-  name: 'Play',
-  props: ['isPlaying']
+  methods:{
+    playControl:function(){
+      this.$store.dispatch('playControl')
+    }
+  },
+  computed:{
+    isPlaying(){
+      return this.$store.state.isPlaying
+    }
+  }
 }
 </script>
 
