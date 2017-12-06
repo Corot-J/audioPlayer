@@ -26,9 +26,6 @@ export const store = new Vuex.Store({
         }
     },
     mutations:{
-        playControl: (state) => {
-            state.isPlaying?store.commit('pause'):store.commit('play');
-        },
         play: (state) => {
             state.isPlaying = true;
         },
