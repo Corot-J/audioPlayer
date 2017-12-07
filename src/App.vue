@@ -10,6 +10,7 @@
 import Player from './components/player'
 import ControlBar from './components/controlBar'
 import PlayList from './components/playList'
+import {mapActions} from 'vuex'
 
 export default {
   name: 'app',
@@ -21,13 +22,15 @@ export default {
       isPlaying: false
     }
   },
+  mounted () {
+    this.$nextTick(function(){
+      this.getPlayList();
+    })
+  },
   methods:{
-    play:function(){
-      this.isPlaying = true;
-    },
-    pause:function(){
-      this.isPlaying = false;
-    }
+    ...mapActions([
+      'getPlayList'
+    ])
   }
 }
 </script>

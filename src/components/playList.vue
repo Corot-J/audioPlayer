@@ -1,17 +1,21 @@
 <template>
   <div class="play-list">
     <div v-for="audio in playList" v-bind:key="audio.name">
-        {{audio.name}}
+        {{audio.title}}
     </div>
   </div>
 </template>
 
 <script>
+
+import {mapGetters} from 'vuex'
+import {mapActions} from 'vuex'
+
 export default {
-  data () {
-    return {
-      playList: this.$store.getters.playList
-    }
+  computed:{
+    ...mapGetters([
+      'playList'
+    ])
   }
 }
 </script>
