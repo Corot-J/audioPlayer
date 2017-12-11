@@ -10,17 +10,18 @@
 </template>
 
 <script>
+
+import {mapState} from 'vuex'
+
 export default {
   methods:{
     playControl:function(){
       this.$store.dispatch('playControl')
     }
   },
-  computed:{
-    isPlaying(){
-      return this.$store.state.isPlaying
-    }
-  }
+  computed:mapState([
+    'isPlaying'
+  ])
 }
 </script>
 
